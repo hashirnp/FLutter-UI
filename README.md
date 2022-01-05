@@ -1,11 +1,7 @@
 # Flutter-UI
 
-Hi All, Hashir here.
+Hi, it's me Hashir.
 
-I am 21 year old boy from Kerala, currently doing BSc in Computer Science. Beside that I am Studying Flutter coz it'is my hobby. 
+I am a 21 year old boy from Kerala and am currently doing BSc in Computer Science. Beyond that I study flutter because it is my hobby.
 
-I will upload some of my works here for you
-
-Have a nice Day :)
-
-with love :(
+Some of my works will be uploaded for you here
