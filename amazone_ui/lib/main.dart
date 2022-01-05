@@ -1,14 +1,8 @@
-import 'dart:ui';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
 
 
     home: MyApp(),
@@ -34,18 +28,18 @@ class _MyAppState extends State<MyApp> {
         BoxConstraints(
             maxWidth: MediaQuery.of(context).size.width,
             maxHeight: MediaQuery.of(context).size.height),
-        designSize: Size(360, 690),
+        designSize:const Size(360, 690),
         orientation: Orientation.portrait);
     return Scaffold(
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          _AppBar(),
-          _primeTag(),
-          Divider(
+         const _AppBar(),
+         const _primeTag(),
+        const  Divider(
             thickness: 2,
           ),
-          Padding(
+        const Padding(
             padding: EdgeInsets.only(left: 8, top: 2),
             child: Text(
               'RESULTS',
@@ -74,7 +68,7 @@ class _MyAppState extends State<MyApp> {
                         Flexible(
                           flex: 3,
                           child: DecoratedBox(
-                              decoration: BoxDecoration(color: Colors.white),
+                              decoration:const BoxDecoration(color: Colors.white),
                               child: Center(
                                 child: Image.network(
                                   list[index].image,
@@ -90,13 +84,13 @@ class _MyAppState extends State<MyApp> {
                               children: [
                                 Text(
                                   list[index].titile,
-                                  style: TextStyle(
+                                  style:const TextStyle(
                                       color: Colors.black,
                                       fontWeight: FontWeight.bold,
                                       fontSize: 15),
                                 ),
                                 Row(
-                                  children: [
+                                  children:const [
                                     Icon(Icons.star, color: Color(0xffFF9900)),
                                     Icon(Icons.star, color: Color(0xffFF9900)),
                                     Icon(Icons.star, color: Color(0xffFF9900)),
@@ -114,7 +108,7 @@ class _MyAppState extends State<MyApp> {
                                     mainAxisAlignment:
                                     MainAxisAlignment.spaceEvenly,
                                     children: [
-                                      Text(
+                                      const Text(
                                         '₹5000',
                                         style: TextStyle(
                                             color: Color(0xffab1937),
@@ -135,7 +129,7 @@ class _MyAppState extends State<MyApp> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsets.only(left: 1),
+                                        padding:const EdgeInsets.only(left: 1),
                                         child: Container(
                                           child: Text(
                                             'Save ₹2,500 (33%)',
@@ -177,7 +171,7 @@ class _AppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 200,
-      decoration: BoxDecoration(
+      decoration:const BoxDecoration(
           gradient: LinearGradient(
               colors: [Color(0xff74FFF9),
                 Color(0xfff9f4ae)],
@@ -193,14 +187,14 @@ class _AppBar extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      SizedBox(
+                     const SizedBox(
                         width: 8,
                       ),
-                      Icon(
+                    const  Icon(
                         Icons.menu_outlined,
                         size: 30,
                       ),
-                      SizedBox(
+                   const   SizedBox(
                         width: 8,
                       ),
                       Image.asset(
@@ -209,8 +203,8 @@ class _AppBar extends StatelessWidget {
                       )
                     ],
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
+                const  Padding(
+                    padding:  EdgeInsets.all(8.0),
                     child: Icon(Icons.shopping_cart_sharp),
                   )
                 ],
@@ -218,10 +212,10 @@ class _AppBar extends StatelessWidget {
             ),
           ),
           Container(
-            margin: EdgeInsets.only(left: 8, right: 8),
-            child: Expanded(child: SearchBox()),
+            margin:const EdgeInsets.only(left: 8, right: 8),
+            child:const Expanded(child: SearchBox()),
           ),
-          SizedBox(
+         const SizedBox(
             height: 8,
           ),
           Expanded(
@@ -259,7 +253,7 @@ class SearchBox extends StatelessWidget {
       height: 45,
       decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.all(Radius.circular(8)),
+          borderRadius:const BorderRadius.all(Radius.circular(8)),
           boxShadow: [
             BoxShadow(
                 color: Colors.black.withOpacity(0.15),
@@ -269,7 +263,7 @@ class SearchBox extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Row(
-          children: [
+          children:const [
             Icon(
               Icons.search,
               color: Colors.black,
@@ -299,14 +293,14 @@ class _primeTag extends StatelessWidget {
           Row(
             children: [
               Padding(
-                padding: EdgeInsets.only(left: 8, top: 8, bottom: 8),
+                padding:const EdgeInsets.only(left: 8, top: 8, bottom: 8),
                 child: Image.asset(
                   'assets/prime.png',
                   height: 30,
                   width: 60,
                 ),
               ),
-              Switch(
+              const Switch(
                 value: false,
                 onChanged: null,
                 focusColor: Colors.grey,
@@ -314,12 +308,12 @@ class _primeTag extends StatelessWidget {
             ],
           ),
           Row(
-            children: [
+            children:const [
               VerticalDivider(
                 thickness: 1.5,
               ),
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding:  EdgeInsets.all(8.0),
                 child: Text(
                   'Filters',
                   style: TextStyle(
@@ -329,7 +323,7 @@ class _primeTag extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(right: 5.0),
+                padding:  EdgeInsets.only(right: 5.0),
                 child: Icon(
                   Icons.arrow_drop_down,
                   color: Color(0xff249de1),
@@ -369,7 +363,7 @@ class _Item extends StatelessWidget {
             Flexible(
               flex: 3,
               child: DecoratedBox(
-                  decoration: BoxDecoration(color: Colors.white),
+                  decoration:const BoxDecoration(color: Colors.white),
                   child: Center(
                     child: Image.network(
                       image,
@@ -385,13 +379,13 @@ class _Item extends StatelessWidget {
                   children: [
                     Text(
                       titile,
-                      style: TextStyle(
+                      style:const TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
                           fontSize: 15),
                     ),
                     Row(
-                      children: [
+                      children:const [
                         Icon(Icons.star, color: Color(0xffFF9900)),
                         Icon(Icons.star, color: Color(0xffFF9900)),
                         Icon(Icons.star, color: Color(0xffFF9900)),
@@ -408,7 +402,7 @@ class _Item extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Text(
+                         const Text(
                             '₹5000',
                             style: TextStyle(
                                 color: Color(0xffab1937),
@@ -427,7 +421,7 @@ class _Item extends StatelessWidget {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsets.only(left: 1),
+                            padding:const EdgeInsets.only(left: 1),
                             child: Container(
                               child: Text(
                                 'Save ₹2,500 (33%)',
