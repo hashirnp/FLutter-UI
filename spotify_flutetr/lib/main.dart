@@ -7,7 +7,7 @@ import 'package:spotify_flutetr/screens/search.dart';
 import 'package:spotify_flutetr/screens/spotify.dart';
 
 void main() {
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
     debugShowCheckedModeBanner: false,
     home: MyApp(),
   ));
@@ -23,12 +23,12 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   int pageIndex = 0;
 
-  List<Widget> screen = [Home(), Search(), Library(), Premium()];
+  List<Widget> screen = const[Home(), Search(), Library(), Premium()];
 
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(statusBarColor: Colors.black));
+       const SystemUiOverlayStyle(statusBarColor: Colors.black));
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -44,14 +44,14 @@ class _MyAppState extends State<MyApp> {
               selectedItemColor: Colors.white,
               unselectedItemColor: Colors.white.withOpacity(0.5),
               unselectedLabelStyle:
-                  TextStyle(color: Colors.white, fontWeight: FontWeight.w300),
+                 const TextStyle(color: Colors.white, fontWeight: FontWeight.w300),
               showUnselectedLabels: true,
               onTap: (index) {
                 setState(() {
                   pageIndex = index;
                 });
               },
-              items: [
+              items:const [
                 BottomNavigationBarItem(
                     label: 'Home',
                     icon: Icon(
